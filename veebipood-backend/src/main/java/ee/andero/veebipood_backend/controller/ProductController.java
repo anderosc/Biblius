@@ -15,9 +15,9 @@ import java.util.List;
 public class ProductController {
     @Autowired
     private ProductRepository productRepository;
-    //Controllerid on front endiga suhtlemiseks
-    //Nende sees on API otspunktid, mille poole front end pöördub
-    //localhost 8090/products
+    //Controllers are to communicate with front
+    //They includ API endpoints, where front will contact 
+    //localhost 8090/products -> testing
     @GetMapping("products")
     public List<Product> getProducts() {
         return productRepository.findAll();
@@ -25,14 +25,14 @@ public class ProductController {
 
     @PostMapping("products")
     public List<Product> saveProducts(@RequestBody Product product) {
-        productRepository.save(product); //TAGATAUSTAL: INSERT values INTO pictures
-        return productRepository.findAll(); //TAGAtaustal: SELECT * FROM pictures
+        productRepository.save(product); //Behind the scenes: INSERT values INTO pictures
+        return productRepository.findAll(); //Behind the scenes: SELECT * FROM pictures
 
     }
     @PostMapping("add-all-products")
     public List<Product> saveAllProducts(@RequestBody List<Product> products) {
-        productRepository.saveAll(products); //TAGATAUSTAL: INSERT values INTO pictures
-        return productRepository.findAll(); //TAGAtaustal: SELECT * FROM pictures
+        productRepository.saveAll(products); //Behind the scenes: INSERT values INTO pictures
+        return productRepository.findAll(); //Behind the scenes: SELECT * FROM pictures
     }
     //@RequestParam  localhost:8090/product?id=5
     //@PathVariable  localhost:8090/product/5

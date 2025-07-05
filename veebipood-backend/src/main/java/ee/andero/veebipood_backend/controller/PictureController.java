@@ -10,21 +10,21 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "https://averagepage-d3ced.web.app")
+@CrossOrigin(origins = "https://averagepage-d3ced.web.app")  //Allow API request only from this site
 public class PictureController {
     @Autowired
     private PicturesRepository picturesRepository;
 
     @GetMapping("pictures")
     public List<Picture> getPictures() {
-        return picturesRepository.findAll(); //TAGAtaustal: SELECT * FROM pictures
+        return picturesRepository.findAll(); //Behind the scene: SELECT * FROM pictures
 
     }
 
     @PostMapping("pictures")
     public List<Picture> SavePictures(@RequestBody Picture picture) {
-        picturesRepository.save(picture); //TAGATAUSTAL: INSERT values INTO pictures
-        return picturesRepository.findAll(); //TAGAtaustal: SELECT * FROM pictures
+        picturesRepository.save(picture); //Behind the scene: INSERT values INTO pictures
+        return picturesRepository.findAll(); //Behind the scene: SELECT * FROM pictures
 
     }
 }
