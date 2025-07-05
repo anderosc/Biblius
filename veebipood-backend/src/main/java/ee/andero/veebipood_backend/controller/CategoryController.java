@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://averagepage-d3ced.web.app")
 public class CategoryController {
     @GetMapping("categories")
     public List<String> getCategories() {

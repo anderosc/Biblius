@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173") //TODO: Firebase aadress
+@CrossOrigin(origins = "https://averagepage-d3ced.web.app")
 public class ProductController {
     @Autowired
     private ProductRepository productRepository;
