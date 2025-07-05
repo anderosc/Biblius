@@ -1,0 +1,19 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+
+th, td{
+  border: 1px, solid black;
+}
+.icon{
+  width: 25px;
+  height: 25px;
+}
+.icon:hover{
+  cursor: pointer;
+  opacity: 70%;
+}
+.icon:active{
+  transform: scale(105%)
+}
