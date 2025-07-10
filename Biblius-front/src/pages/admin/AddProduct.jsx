@@ -11,15 +11,17 @@ function AddProduct() {
   const imageRef = useRef();
   const ratingRateRef = useRef();
   const ratingCountRef = useRef();
+  const apiUrl = import.meta.env.VITE_API_URL;
+
 
   const [message, setMessage] = useState("Add product");
   const [categories, setCategories] = useState([])
 
   useEffect(() =>{
-    fetch("https://veebipood-backend.onrender.com/categories")
+    fetch(`${apiUrl}/categories`)
     .then(res => res.json())
     .then(json => setCategories(json))
-  }, []);
+  }, [apiUrl]);
 
   const addProduct = () =>{
    

@@ -14,17 +14,19 @@ function HomePage() {
   const { t } = useTranslation();
   const [products, setProducts] = useState([]);
   const [categories, setCategory] = useState([]);
+  const apiUrl = import.meta.env.VITE_API_URL;
+
 
 
   useEffect(() => {
-      fetch("https://veebipood-backend.onrender.com/products")
+      fetch(`${apiUrl}/products`)
       .then(res => res.json())
       .then(json => setProducts(json))
       
-    }, []);
+    }, [apiUrl]);
 
     useEffect(() => {
-      fetch("https://veebipood-backend.onrender.com/categories")
+      fetch(`${apiUrl}/categories`)
       .then(res => res.json())
       .then(json => setCategory(json))
       

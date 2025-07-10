@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-VeebipoodBackendApplication<veebipood-backend>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "ee.andero.veebipood_backend.VeebipoodBackendApplication",
+            "projectName": "veebipood-backend",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-BibliusBackendApplication<veebipood-backend>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "ee.andero.Biblius_backend.BibliusBackendApplication",
+            "projectName": "veebipood-backend",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
