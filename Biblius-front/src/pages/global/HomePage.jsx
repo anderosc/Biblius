@@ -68,7 +68,7 @@ function HomePage() {
 
   return (
     <div>
-
+      <div>New Books</div>
       <SortButtons products={products} setProducts={setProducts}/>
       <br />
       <div>{t("homepage_filter")}:</div>
