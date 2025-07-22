@@ -6,20 +6,22 @@ import { Link } from "react-router-dom";
 import Payment from "../../components/Payment";
 
 
-function MaintainProducts() {
+function MaintainBooks() {
   const [products, setProducts] = useState([]);
+  const apiUrl = import.meta.env.VITE_API_URL;
+  // console.log("its working")
   // const searchInput = useRef();
 
   useEffect(() =>{
-      fetch("http://localhost:8090/products")
+      fetch(`${apiUrl}/books`)
       .then(res => res.json())
       .then(json => setProducts(json))
-    }, []);
+    }, [[apiUrl]]);
 
 // id kaudu tuleks võtta
 //muutmine käib ainult index alusel
   const deleteProduct = (id) =>{
-    fetch("http://localhost:8090/products?id=" + id, {
+    fetch(`${apiUrl}/books?id=` + id, {
       method : "DELETE"
     })
     .then(res => res.json())
@@ -96,4 +98,4 @@ function MaintainProducts() {
   )
 }
 
-export default MaintainProducts
+export default MaintainBooks

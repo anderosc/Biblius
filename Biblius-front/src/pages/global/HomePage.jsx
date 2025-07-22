@@ -12,16 +12,16 @@ import { CartSumContext } from "../../store/CartSumContext";
 function HomePage() {
   const {increase} = useContext(CartSumContext)
   const { t } = useTranslation();
-  const [products, setProducts] = useState([]);
+  const [books, setBooks] = useState([]);
   const [categories, setCategory] = useState([]);
   const apiUrl = import.meta.env.VITE_API_URL;
 
 
 
   useEffect(() => {
-      fetch(`${apiUrl}/products`)
+      fetch(`${apiUrl}/books`)
       .then(res => res.json())
-      .then(json => setProducts(json))
+      .then(json => setBooks(json))
       
     }, [apiUrl]);
 
@@ -54,22 +54,14 @@ function HomePage() {
     // setProducts(products.filter(product => product.category.includes("electronics")));
       fetch("http://localhost:8090/products-by-category?category=" + category)
       .then(res => res.json())
-      .then(json => setProducts(json))
+      .then(json => setBooks(json))
   };
-  // const filterJewelery = () => {
-  //   // setProducts(products.filter(product => product.category.includes("jewelery")));
-  // };
-  // const filterMensClothing = () => {
-  //   // setProducts(products.filter(product => product.category.includes("men's clothing")));
-  // };
-  // const filterWomensClothing = () => {
-  //   // setProducts(products.filter(product => product.category.includes("women's clothing")));
-  // };
+
 
   return (
     <div>
       <div>New Books</div>
-      <SortButtons products={products} setProducts={setProducts}/>
+      <SortButtons books={books} setBooks={setBooks}/>
       <br />
       <div>{t("homepage_filter")}:</div>
       {/* <button onClick={() => filterByCategory}>{t("men's clothing")}</button>
@@ -81,7 +73,7 @@ function HomePage() {
       )}
 
       <br />
-      {products.sort((a,b) => a.id - b.id).map((product) => 
+      {books.sort((a,b) => a.id - b.id).map((product) => 
         <div key={product.id}>
           <img className={product.active ? styles.image : styles.inactive_image} src={product.image} alt="" />
           <div>{product.title}</div>

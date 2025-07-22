@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 
 
-function EditProduct() {
+function EditBooks() {
   // JSON.stringify(product)
   const {id} = useParams();
   // const found = productsData.find(product => product.id == Number(id))
@@ -14,14 +14,14 @@ function EditProduct() {
   const [categories, setCategories] = useState([])
 
   useEffect(() =>{
-    fetch("http://localhost:8090/product?id=" + id)
+    fetch("http://localhost:8080/books?id=" + id)
     .then(res => res.json())
     .then(json => setProduct(json))
   }, [id]);
 
 
     useEffect(() =>{
-      fetch("http://localhost:8090/categories")
+      fetch("http://localhost:8080/categories")
       .then(res => res.json())
       .then(json => setCategories(json))
     }, []);
@@ -33,7 +33,7 @@ function EditProduct() {
       return;
     }
 
-    fetch("http://localhost:8090/products", {
+    fetch("http://localhost:8080/books", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -116,4 +116,4 @@ function EditProduct() {
   )
 }
 
-export default EditProduct
+export default EditBooks

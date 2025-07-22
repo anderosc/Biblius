@@ -6,6 +6,8 @@ import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import ChangeView from "../../components/ChangeView";
 import { useState } from "react";
 
+
+// REMOVED THIS PAGE, REUSE IT???????????????
 const defaultIcon = L.icon({
   iconUrl: location,
   shadowUrl: iconShadow,

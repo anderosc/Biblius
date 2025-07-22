@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 
 // import categoriesDATA from "../../data/categories.json"
 
-function AddProduct() {
+function AddBook() {
 
   const titleRef = useRef();
   const priceRef = useRef();
@@ -63,6 +63,7 @@ function AddProduct() {
  
   }
 
+  //TO DO- need to change API!!!
   fetch("https://veebipood-backend.onrender.com/products", {
     method: "POST",
     headers: {
@@ -134,4 +135,4 @@ function AddProduct() {
   )
 }
 
-export default AddProduct
+export default AddBook

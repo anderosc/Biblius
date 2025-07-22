@@ -31,38 +31,34 @@ function NavigationBar() {
     <Navbar expand="lg" className="bg-body-tertiary">
 
       <Container>
-        <Navbar.Brand as={Link} to=" ">WebShop</Navbar.Brand>
+        <Navbar.Brand as={Link} to=" ">Biblius</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
 
-            <Nav.Link as={Link} to="/" >  {t('navbar_home')}</Nav.Link>
-            <Nav.Link as={Link} to="/shops">{t('navbar_shops')}</Nav.Link>
+            <Nav.Link as={Link} to="/" > Home</Nav.Link>
+            <Nav.Link as={Link} to="/books"> Books </Nav.Link>
             {/* <Nav.Link as={Link} to="/products">Products</Nav.Link> */}
-            <Nav.Link as={Link} to="/cart"> {t('navbar_cart')}</Nav.Link>
+            {/* <Nav.Link as={Link} to="/cart"> {t('navbar_cart')}</Nav.Link> */}
             <Nav.Link as={Link} to="/contact"> {t('navbar_contact')}</Nav.Link>
 
 
 
            { loggedIn === true && 
            <NavDropdown title="Admin" id="basic-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/admin">Admin</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/admin/add-product">{t('navbar_add_product')}</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/admin/maintain-products">{t('navbar_maintain_products')}</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/admin">Admin </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/admin/add-book">    </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/admin/maintain-books"> Maintain Books</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/admin/maintain-categories">{t(`navbar_maintain_categories`)}</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/admin/maintain-shops">{t(`navbar_maintain_shops`)}</NavDropdown.Item>
             </NavDropdown>}
 
           </Nav>
 
-
-          
           <Nav>
           <select onChange={changeLang} value={i18n.language}>
               <option value="eng"> ENG</option>
               <option value="et"> ET</option>
-              <option value="fin">🇫🇮 FIN</option>
-              <option value="de">🇩🇪 DE</option>
             </select>
             <br />
            { loggedIn === false ?
