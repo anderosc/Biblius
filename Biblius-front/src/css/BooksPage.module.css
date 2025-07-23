@@ -6,3 +6,10 @@
     filter: grayscale(100%);
     opacity: 50%;
 }
+
+.bookbox{
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+}
