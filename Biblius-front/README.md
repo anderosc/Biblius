@@ -1,1 +1,1 @@
-This e-commerce website lets users browse products, add them to a shopping cart, and proceed to a mock checkout, with products fetched from a local backend. The admin view allows adding, editing, and deleting products through the backend. While user registration is not available, I use AuthContext for login sessions. To view full live view, it is recommended to run website locally with back-end.
+
