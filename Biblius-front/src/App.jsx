@@ -5,8 +5,7 @@ import NavigationBar from './components/NavigationBar'
 import HomePage from './pages/global/HomePage'
 import ContactUs from './pages/global/ContactUs'
 // import Shops from './pages/global/Shops'
-import Cart from './pages/global/Cart'
-import SingleProduct from './pages/global/SingleProduct'
+import SingleBook from './pages/global/SingleBook'
 import AdminHome from './pages/admin/AdminHome'
 import MaintainCategories from './pages/admin/MaintainCategories'
 import MaintainShops from './pages/admin/MaintainShops'
@@ -34,8 +33,7 @@ function App() {
         <Route path="" element={ <HomePage/>} />
         <Route path="/contact" element={ <ContactUs/>} />
         <Route path="/books" element={ <Books/>} />
-        <Route path="/cart" element={ <Cart/>} />
-        <Route path="/product/:id" element={ <SingleProduct/>} />
+        <Route path="/product/:id" element={ <SingleBook/>} />
 
       {  loggedIn === true ? <>
         <Route path="/admin" element={ <AdminHome/>} />

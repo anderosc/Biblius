@@ -2,15 +2,12 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 // import productsFromFile from "../../data/products.json"
 import { ToastContainer, toast } from 'react-toastify';
-import styles from "../../css/Homepage.module.css"
+import styles from "../../css/BooksPage.module.css"
 import { useTranslation } from 'react-i18next';
 import SortButtons from "../../components/SortButtons";
-import { useContext } from "react";
-import { CartSumContext } from "../../store/CartSumContext";
 // import categories from "../../data/categories.json"
 
 function HomePage() {
-  const {increase} = useContext(CartSumContext)
   const { t } = useTranslation();
   const [books, setBooks] = useState([]);
   const [categories, setCategory] = useState([]);
@@ -44,7 +41,6 @@ function HomePage() {
       }
 
       localStorage.setItem("cart", JSON.stringify(cartLocalStorage));
-      increase(productClicked.price);
       toast(t("homepage_product_added"));
   }
 

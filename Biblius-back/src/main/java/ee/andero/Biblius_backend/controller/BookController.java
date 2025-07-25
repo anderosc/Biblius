@@ -7,6 +7,9 @@ import ee.andero.Biblius_backend.entity.Books;
 import ee.andero.Biblius_backend.repository.BookRepository;
 
 import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 public class BookController {
@@ -57,5 +60,10 @@ public class BookController {
          bookrepository.deleteById(id);
          return bookrepository.findAll();
     }
+    // @GetMapping("books/search?={param}")
+    // public String getMethodName(@RequestParam String param) {
+    //     return new String();
+    // }
+    
 
 }

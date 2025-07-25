@@ -6,11 +6,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../store/AuthContext';
-import { CartSumContext } from '../store/CartSumContext';
 
 function NavigationBar() {
   const {loggedIn, setLoggedIn} = useContext(AuthContext);
-  const {cartSum} = useContext(CartSumContext);
 
   const navigate = useNavigate();
 
@@ -70,7 +68,6 @@ function NavigationBar() {
           <Nav.Link onClick={logout}> LogOut </Nav.Link>
           </>}
           </Nav>
-          <Nav.Link > {cartSum.toFixed(2)} € </Nav.Link>
 
 
         </Navbar.Collapse>
